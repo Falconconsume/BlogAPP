@@ -1,7 +1,6 @@
 import { useContext, useState, useEffect } from "react";
 import PostAuthor from "../components/PostAuthor.tsx";
 import { Link, useParams } from "react-router-dom";
-import Thumbnail from "../assets/blog17.jpg";
 import DeletePost from "./DeletePost.tsx";
 import { UserContext } from "../context/userContext.tsx";
 import axios from "axios";
@@ -13,9 +12,10 @@ interface IPost {
 }
 
 interface IInfoPost {
+  _id: string;
   category: string;
   createdAt: string;
-  creator: string;
+  creator: any;
   description: string;
   thumbnail: string;
   title: string;
@@ -24,7 +24,7 @@ interface IInfoPost {
 
 const PostDetail = () => {
   const { id } = useParams();
-  const [post, setPost] = useState<IInfoPost | Object>({});
+  const [post, setPost] = useState<any | Object>({});
   const [error, setError] = useState(null);
 
   const { currentUser }: any = useContext(UserContext);

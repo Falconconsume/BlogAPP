@@ -1,7 +1,6 @@
 import { useState, useContext, useEffect } from "react";
-import { DUMMY_POSTS } from "../data.ts";
 import { Link } from "react-router-dom";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { UserContext } from "../context/userContext.tsx";
 import axios from "axios";
 import { REACT_ASSETS_URI, REACT_BASE_URI } from "../../constants/constants.ts";
